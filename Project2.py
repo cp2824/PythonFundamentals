@@ -40,7 +40,18 @@ def my_break(break_info = None):
         break_info['t_breaks'] = 3
         break_info['url'] = "https://www.youtube.com/watch?annotation_id=annotation_2406068509&feature=iv&src_vid=cUYSGojUuAU&v=AruWNRVZfyk"
         break_info['t_sleep'] = 60 * 60 # one hour
-        #break_info['t_sleep'] = 5 # one hour
+        #break_info['t_sleep'] = 5
+        # test for individual keys
+        # if <keys> in dict
+    if not 't_breaks' in break_info:
+        break_info['t_breaks'] = 3
+
+    if not 'url' in break_info:
+        break_info['url'] = "https://www.youtube.com/watch?annotation_id=annotation_2406068509&feature=iv&src_vid=cUYSGojUuAU&v=AruWNRVZfyk"
+
+    if not 't_sleep' in break_info:
+        break_info['t_sleep'] = 60 * 60  # one hour
+        #break_info['t_sleep'] = 5
 
     break_count = 0
     while break_count < break_info['t_breaks']:
@@ -49,4 +60,7 @@ def my_break(break_info = None):
         break_count += 1
 
 if __name__ == '__main__':
+    #info = {}
+    #info['t_break'] = 3
+    #my_break(info)
     my_break()
